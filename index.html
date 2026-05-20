@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusta Tech Assistência | Celulares e Computadores</title>
+    <meta name="description" content="Manutenção rápida e especializada de celulares, notebooks e computadores. Troca de tela, bateria, formatação e upgrades.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="announcementPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close-btn" onclick="closePopup()">&times;</button>
+            <img src="anuncio.jpg" alt="Anúncio Gusta Tech" onerror="this.src='https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=800&q=80'">
+        </div>
+    </div>
+
+    <a href="https://wa.me/5511948990655?text=Olá! Gostaria de tirar uma dúvida sobre meu aparelho." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#home" class="logo" onclick="switchPage('home')">
+                <i class="fas fa-laptop-medical"></i> Gusta<span>Tech</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" onclick="switchPage('home')">Início</a>
+                <a href="#servicos" class="nav-link" onclick="switchPage('servicos')">Serviços</a>
+                <a href="#pre-orcamentos" class="nav-link" onclick="switchPage('pre-orcamentos')">Pré-Orçamentos</a>
+                <a href="#orcamento" class="nav-link" onclick="switchPage('orcamento')">Solicitar Orçamento</a>
+                <a href="#sobre" class="nav-link" onclick="switchPage('sobre')">Sobre Nós</a>
+                <a href="#contato" class="nav-link" onclick="switchPage('contato')">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-home" class="page active">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <span class="badge">Rápido · Transparente · Seguro</span>
+                    <h1>Seu Dispositivo Pronto para o Dia a Dia</h1>
+                    <p>Especialistas em substituição de componentes, otimização de sistemas e upgrades de performance. Devolvemos a agilidade ao seu celular ou computador com peças de alta qualidade e garantia homologada.</p>
+                    <div class="hero-buttons">
+                        <a href="#orcamento" class="btn btn-primary" onclick="switchPage('orcamento')"><i class="fas fa-file-invoice-dollar"></i> Solicitar Orçamento</a>
+                        <a href="#pre-orcamentos" class="btn btn-secondary" onclick="switchPage('pre-orcamentos')">Ver Tabela de Preços</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="home-hero.jpg" alt="Manutenção Profissional" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+        </section>
+
+        <section class="differentials container">
+            <div class="diff-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Atendimento Rápido</h3>
+                <p>Reparos executados com precisão e agilidade para você não ficar desconectado.</p>
+            </div>
+            <div class="diff-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Técnicos Especializados</h3>
+                <p>Mão de obra capacitada nas principais marcas de smartphones e computadores do mercado.</p>
+            </div>
+            <div class="diff-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Garantia nos Serviços</h3>
+                <p>Total segurança com garantia de 90 dias assegurada em todas as trocas de peças.</p>
+            </div>
+            <div class="diff-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Peças Selecionadas</h3>
+                <p>Componentes de excelente procedência que devolvem o brilho e autonomia originais.</p>
+            </div>
+        </section>
+
+        <section class="reviews container">
+            <div class="section-title">
+                <h2>Avaliações de Clientes</h2>
+                <p>O reflexo do nosso compromisso com a eficiência</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">M</div>
+                        <div>
+                            <h4>Marcos Vinícius</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="review-text">Troquei a bateria do meu iPhone e o serviço ficou pronto super rápido. Atendimento honesto e preço muito bom.</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">F</div>
+                        <div>
+                            <h4>Fernanda Lima</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="review-text">Levei meu notebook antigo para colocar SSD e formatar. Parece outro computador de tão rápido que ficou! Recomendo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Qual o tempo médio para uma troca de tela ou bateria? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"><p>A maioria das substituições de telas e baterias de celulares leva entre 1 a 3 horas, dependendo do modelo exato e da disponibilidade em estoque.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Meus dados são apagados durante a manutenção? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer"><p>Para trocas de peças físicas (como tela e bateria) os dados não são afetados. Para serviços de formatação ou reinstalação de sistema, oferecemos o serviço de backup prévio para assegurar seus arquivos.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <main id="page-servicos" class="page">
+        <section class="container py-section">
+            <div class="section-title">
+                <h2>Serviços Disponíveis</h2>
+                <p>Soluções ideais para o perfeito funcionamento dos seus equipamentos</p>
+            </div>
+            <div class="services-page-grid">
+                <div class="service-detail-card">
+                    <img src="celular.jpg" alt="Assistência em Celulares" onerror="this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80'">
+                    <div class="content">
+                        <h3><i class="fas fa-mobile-alt"></i> Assistência em Celulares</h3>
+                        <p>Substituição de displays danificados, baterias viciadas e conectores de carga falhando.</p>
+                    </div>
+                </div>
+                <div class="service-detail-card">
+                    <img src="notebook.jpg" alt="Computadores e Notebooks" onerror="this.src='https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=500&q=80'">
+                    <div class="content">
+                        <h3><i class="fas fa-laptop"></i> Computadores e Notebooks</h3>
+                        <p>Manutenção preventiva, limpeza interna contra poeira, troca de pasta térmica e melhorias de hardware.</p>
+                    </div>
+                </div>
+                <div class="service-detail-card">
+                    <img src="tablet.jpg" alt="Tablets" onerror="this.src='https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=500&q=80'">
+                    <div class="content">
+                        <h3><i class="fas fa-tablet-alt"></i> Tablets</h3>
+                        <p>Troca de vidros, telas touch e baterias de modelos multimarcas.</p>
+                    </div>
+                </div>
+                <div class="service-detail-card">
+                    <img src="pecas.jpg" alt="Troca de Peças" onerror="this.src='https://images.unsplash.com/photo-1601524909162-be87252be298?auto=format&fit=crop&w=500&q=80'">
+                    <div class="content">
+                        <h3><i class="fas fa-tools"></i> Troca de Peças</h3>
+                        <p>Instalação de novas tampas traseiras, botões físicos, câmeras e alto-falantes.</p>
+                    </div>
+                </div>
+                <div class="service-detail-card">
+                    <img src="software.jpg" alt="Ajustes de Software" onerror="this.src='https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=500&q=80'">
+                    <div class="content">
+                        <h3><i class="fas fa-code-branch"></i> Ajustes de Software</h3>
+                        <p>Reinstalação de sistemas operacionais travados, remoção de falhas de inicialização e otimização de velocidade.</p>
+                    </div>
+                </div>
+                <div class="service-detail-card">
+                    <img src="manutencao.jpg" alt="Manutenção Geral" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500&q=80'">
+                    <div class="content">
+                        <h3><i class="fas fa-clipboard-list"></i> Manutenção Geral</h3>
+                        <p>Revisões periódicas de hardware para garantir a maior vida útil dos seus aparelhos pessoais ou de trabalho.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="page-pre-orcamentos" class="page">
+        <section class="container py-section">
+            <div class="section-title">
+                <h2>Tabela de Pré-Orçamentos por Modelo</h2>
+                <p>Selecione o modelo do seu aparelho para verificar os valores e prazos de manutenção</p>
+            </div>
+
+            <h3 class="brand-category-title"><i class="fab fa-apple"></i> Linha iPhone</h3>
+            <div class="cards-grid">
+                <div class="price-card">
+                    <h4>iPhone XR</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 220,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 220,00</li>
+                        <li><strong>Tampa Traseira:</strong> R$ 160,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h a 2h</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('iPhone', 'iPhone XR')">Solicitar</button>
+                </div>
+                <div class="price-card">
+                    <h4>iPhone 11</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 250,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 220,00</li>
+                        <li><strong>Tampa Traseira:</strong> R$ 200,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h a 2h</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('iPhone', 'iPhone 11')">Solicitar</button>
+                </div>
+                <div class="price-card">
+                    <h4>iPhone 12</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 350,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 260,00</li>
+                        <li><strong>Bateria Genuína:</strong> R$ 420,00</li>
+                        <li><strong>Tampa Traseira:</strong> R$ 250,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h a 3h</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('iPhone', 'iPhone 12')">Solicitar</button>
+                </div>
+            </div>
+            
+            <div class="original-parts-notice">
+                <p><i class="fas fa-info-circle"></i> Para orçamentos de peça original Apple, entre em contato diretamente conosco.</p>
+                <a href="https://wa.me/5511948990655?text=Olá! Quero um orçamento de peças ORIGINAIS para meu iPhone." target="_blank" class="btn btn-whatsapp-notice"><i class="fab fa-whatsapp"></i> Consultar Peça Original no WhatsApp</a>
+            </div>
+
+            <h3 class="brand-category-title"><i class="fas fa-mobile-alt"></i> Linha Motorola</h3>
+            <div class="cards-grid">
+                <div class="price-card">
+                    <h4>G13 / G23 / G34 / G45 / G53</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 220,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 250,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h30m</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Motorola', 'Moto G13/G23/G34/G45/G53')">Solicitar</button>
+                </div>
+                <div class="price-card">
+                    <h4>Moto G54</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 300,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 265,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h30m</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Motorola', 'Moto G54')">Solicitar</button>
+                </div>
+                <div class="price-card">
+                    <h4>Moto G42</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 230,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 230,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h30m</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Motorola', 'Moto G42')">Solicitar</button>
+                </div>
+            </div>
+
+            <div class="original-parts-notice">
+                <p><i class="fas fa-info-circle"></i> Para orçamentos de peça original Motorola, entre em contato diretamente conosco.</p>
+                <a href="https://wa.me/5511948990655?text=Olá! Quero um orçamento de peças ORIGINAIS para meu Motorola." target="_blank" class="btn btn-whatsapp-notice"><i class="fab fa-whatsapp"></i> Consultar Peça Original no WhatsApp</a>
+            </div>
+
+            <h3 class="brand-category-title"><i class="fas fa-mobile-alt"></i> Linha Samsung</h3>
+            <div class="cards-grid">
+                <div class="price-card">
+                    <h4>Samsung A16</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Tela Oled:</strong> R$ 380,00</li>
+                        <li><strong>Bateria:</strong> Consultar via WhatsApp</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h30m</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Samsung', 'Samsung A16')">Solicitar</button>
+                </div>
+                <div class="price-card">
+                    <h4>Samsung A22</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Tela Oled:</strong> R$ 280,00</li>
+                        <li><strong>Bateria:</strong> R$ 250,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 1h30m</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Samsung', 'Samsung A22')">Solicitar</button>
+                </div>
+            </div>
+
+            <div class="original-parts-notice">
+                <p><i class="fas fa-info-circle"></i> Para orçamentos de peça original Samsung, entre em contato diretamente conosco.</p>
+                <a href="https://wa.me/5511948990655?text=Olá! Quero um orçamento de peças ORIGINAIS para meu Samsung." target="_blank" class="btn btn-whatsapp-notice"><i class="fab fa-whatsapp"></i> Consultar Peça Original no WhatsApp</a>
+            </div>
+
+            <h3 class="brand-category-title"><i class="fas fa-mobile-alt"></i> Linha Xiaomi / Poco</h3>
+            <div class="cards-grid">
+                <div class="price-card">
+                    <h4>Poco X5</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 450,00</li>
+                        <li><strong>Bateria:</strong> Consultar via WhatsApp</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 2h</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Xiaomi/Poco', 'Poco X5')">Solicitar</button>
+                </div>
+                <div class="price-card">
+                    <h4>Redmi 12</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Troca de Tela:</strong> R$ 210,00</li>
+                        <li><strong>Troca de Bateria:</strong> R$ 260,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo médio: 2h</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Xiaomi/Poco', 'Redmi 12')">Solicitar</button>
+                </div>
+            </div>
+
+            <div class="original-parts-notice">
+                <p><i class="fas fa-info-circle"></i> Para orçamentos de peça original Xiaomi, entre em contato diretamente conosco.</p>
+                <a href="https://wa.me/5511948990655?text=Olá! Quero um orçamento de peças ORIGINAIS para meu Xiaomi." target="_blank" class="btn btn-whatsapp-notice"><i class="fab fa-whatsapp"></i> Consultar Peça Original no WhatsApp</a>
+            </div>
+
+            <h3 class="brand-category-title"><i class="fas fa-desktop"></i> Computadores e Notebooks</h3>
+            <div class="cards-grid">
+                <div class="price-card">
+                    <h4>Serviços Gerais</h4>
+                    <ul class="price-list-items">
+                        <li><strong>Formatação:</strong> R$ 110,00</li>
+                        <li><strong>Instalação de Windows:</strong> R$ 130,00</li>
+                        <li><strong>Limpeza Completa:</strong> R$ 140,00</li>
+                        <li><strong>Upgrade SSD (240GB):</strong> R$ 220,00</li>
+                        <li><strong>Backup de Segurança:</strong> R$ 90,00</li>
+                    </ul>
+                    <div class="time"><i class="far fa-clock"></i> Tempo estimado: Sob consulta</div>
+                    <button class="btn btn-secondary btn-block" onclick="orderService('Computador/Notebook', 'Serviços Gerais')">Solicitar</button>
+                </div>
+            </div>
+            
+            <p class="table-notice">*Os preços exibidos incluem a peça e a mão de obra técnica com 90 dias de garantia assegurada.</p>
+        </section>
+    </main>
+
+    <main id="page-orcamento" class="page">
+        <section class="container py-section max-width-md">
+            <div class="section-title">
+                <h2>Solicitar Orçamento Personalizado</h2>
+                <p>Preencha os detalhes do aparelho para receber um atendimento imediato</p>
+            </div>
+            <form class="orcamento-form" id="whatsappForm">
+                <div class="form-group">
+                    <label for="nome">Seu Nome Completo</label>
+                    <input type="text" id="nome" required placeholder="Ex: Marcos Silva">
+                </div>
+                <div class="form-grid-2col">
+                    <div class="form-group">
+                        <label for="marca">Marca do Dispositivo</label>
+                        <input type="text" id="marca" required placeholder="Ex: Apple, Samsung, Motorola">
+                    </div>
+                    <div class="form-group">
+                        <label for="modelo">Modelo Exato</label>
+                        <input type="text" id="modelo" required placeholder="Ex: iPhone XR, Moto G54">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="defeito">Defeito Principal (Resumo)</label>
+                    <input type="text" id="defeito" required placeholder="Ex: Tela quebrou, bateria descarregando rápido">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição Detalhada do Problema</label>
+                    <textarea id="descricao" rows="4" placeholder="Conte o que aconteceu com o aparelho..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="foto">Upload de Fotos do Aparelho (Opcional)</label>
+                    <input type="file" id="foto" accept="image/*" multiple>
+                    <small style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.35rem; display: block;">
+                        <i class="fas fa-info-circle"></i> Você poderá anexar as mídias diretamente na tela do WhatsApp que será aberta.
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-large animate-pulse">
+                    <i class="fab fa-whatsapp"></i> Enviar orçamento no WhatsApp
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <main id="page-sobre" class="page">
+        <section class="container py-section about-grid">
+            <div>
+                <span class="badge">Profissionalismo em Foco</span>
+                <h2>Sua Escolha Segura para Reparos Físicos e Lógicos</h2>
+                <p>A <strong>Gusta Tech Assistência</strong> atua com foco absoluto na manutenção corretiva e preventiva de aparelhos de uso cotidiano e corporativo.</p>
+                <p>Trabalhamos de forma transparente, focando na substituição eficiente de telas, baterias e reparação de sistemas operacionais. Nosso laboratório adota processos organizados que visam o menor tempo de espera possível sem abrir mão do acabamento perfeito.</p>
+                
+                <div class="warranty-box">
+                    <h4><i class="fas fa-certificate"></i> Certificação e Prazos de Proteção</h4>
+                    <p>Todas as nossas trocas de componentes contam com a garantia padrão de 90 dias. Qualquer anormalidade de fabricação na peça instalada é resolvida de imediato, assegurando sua total satisfação e direito legal.</p>
+                </div>
+            </div>
+            
+            <div class="carousel-container">
+                <h4 class="carousel-title"><i class="fas fa-tools"></i> Nossos Reparos Reais</h4>
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <img src="reparo1.jpg" alt="Troca de tela efetuada" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80'">
+                        <div class="carousel-caption">Substituição Completa de Display</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="reparo2.jpg" alt="Manutenção de placa" onerror="this.src='https://images.unsplash.com/photo-1601524909162-be87252be298?auto=format&fit=crop&w=600&q=80'">
+                        <div class="carousel-caption">Troca de Bateria de Alta Performance</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="reparo3.jpg" alt="Limpeza de notebook" onerror="this.src='https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80'">
+                        <div class="carousel-caption">Limpeza Interna Técnica + Pasta Térmica</div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <main id="page-contato" class="page">
+        <section class="container py-section">
+            <div class="section-title">
+                <h2>Canais Oficiais de Contato</h2>
+                <p>Fale conosco ou faça uma visita</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item-card">
+                        <i class="fab fa-whatsapp color-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp Comercial</h4>
+                            <p><a href="https://wa.me/5511948990655" target="_blank" rel="noopener noreferrer">(11) 94899-0655</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-card">
+                        <i class="fab fa-instagram color-instagram"></i>
+                        <div>
+                            <h4>Instagram Profissional</h4>
+                            <p><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@gustatech.assistencia</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-card">
+                        <i class="far fa-envelope color-email"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:gustavosiqueira360@hotmail.com">gustavosiqueira360@hotmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item-card">
+                        <i class="far fa-clock"></i>
+                        <div>
+                            <h4>Horário Operacional</h4>
+                            <p>Segunda a Sexta: 08h às 18h<br>Sábado: 08h às 14h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <h4><i class="fas fa-map-marker-alt"></i> Localização</h4>
+                    <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Rua Isa Silveira Leal, 335</p>
+                    <div class="map-placeholder">
+                        <iframe src="about:blank" width="100%" height="250" style="border:0; border-radius: 8px; filter: invert(90%) hue-rotate(180deg); background: var(--bg-surface);" allowfullscreen="" loading="lazy" title="Mapa de Localização"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 Gusta Tech Assistência. Todos os direitos reservados.</p>
+            <p>Otimizado para buscadores locais.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
