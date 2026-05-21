@@ -152,9 +152,20 @@ img { max-width: 100%; height: auto; display: block; border-radius: 12px; }
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    color: var(--text-main);
 }
 .logo i { color: var(--secondary); margin-right: 4px; }
-.logo span { color: var(--primary); }
+
+/* "GS Solutions" fica Branco */
+.logo span { 
+    color: var(--text-main); 
+}
+
+/* Apenas o "Empire" fica Roxo */
+.logo span span { 
+    color: var(--primary); 
+    margin-left: 5px; /* Dá um espacinho sutil entre as palavras */
+}
 
 .nav-menu {
     display: flex;
